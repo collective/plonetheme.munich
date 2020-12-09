@@ -40,6 +40,10 @@
       name="plonetheme.munich-hiddenprofiles"
       />
 
-  <!-- -*- extra stuff goes here -*- -->
+  <plone:static
+      directory="theme"
+      type="theme"
+      name="munich"
+      />
 
 </configure>

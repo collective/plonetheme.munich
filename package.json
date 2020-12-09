@@ -1,0 +1,46 @@
+{
+  "name": "plonetheme.munich",
+  "version": "0.1.0",
+  "description": "An add-on for Plone",
+  "main": "index.js",
+  "author": "Stefan Antonelli",
+  "license": "MIT",
+  "homepage": "https://github.com/collective/plonetheme.munich/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/collective/plonetheme.munich.git"
+  },
+  "bugs": {
+    "url": "https://github.com/collective/plonetheme.munich/issues"
+  },
+  "keywords": [
+    "plone",
+    "theme"
+  ],
+  "dependencies": {
+    "bootstrap": "5.0.0-alpha3",
+    "bootstrap-icons": "1.1.0"
+  },
+  "scripts": {
+    "css": "npm-run-all css-compile-main css-prefix-main css-minify-main",
+    "css-lint": "stylelint \"src/plonetheme/munich/theme/scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "css-compile-main": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/plonetheme/munich/theme/scss/ -o src/plonetheme/munich/theme/css/",
+    "css-minify-main": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output src/plonetheme/munich/theme/css/munich.min.css src/plonetheme/munich/theme/css/munich.css",
+    "css-prefix-main": "postcss --config build/postcss.config.js --replace \"src/plonetheme/munich/theme/css/*.css\" \"!src/plonetheme/munich/theme/css/*.min.css\"",
+    "js": "npm-run-all js-compile-main",
+    "js-compile-main": "uglifyjs src/plonetheme/munich/theme/js/munich.js --compress --mangle --output src/plonetheme/munich/theme/js/munich.min.js",
+    "lint": "npm-run-all --parallel css-lint",
+    "dist": "npm-run-all --parallel css js",
+    "watch": "nodemon --watch src/plonetheme/munich/theme/scss/ --ext scss --exec \"npm run css\""
+  },
+  "devDependencies": {
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.13.0",
+    "nodemon": "^1.19.4",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.1.0",
+    "postcss-cli": "^8.3.0",
+    "stylelint": "^13.8.0",
+    "uglify-js": "^3.9.4"
+  }
+}
