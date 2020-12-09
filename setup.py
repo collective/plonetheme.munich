@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='plonetheme.munich',
-    version='1.0a1',
+    version='0.1.0.dev0',
     description="A Theme for Plone 6",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
@@ -22,9 +22,8 @@ setup(
         "Environment :: Web Environment",
         "Framework :: Plone",
         "Framework :: Plone :: Addon",
-        "Framework :: Plone :: 5.2",
+        "Framework :: Plone :: 6.0",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.7",
         "Operating System :: OS Independent",
         "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
@@ -45,7 +44,7 @@ setup(
     package_dir={'': 'src'},
     include_package_data=True,
     zip_safe=False,
-    python_requires="==2.7, >=3.6",
+    python_requires=">=3.6",
     install_requires=[
         'setuptools',
         # -*- Extra requirements: -*-
@@ -57,11 +56,7 @@ setup(
     extras_require={
         'test': [
             'plone.app.testing',
-            # Plone KGS does not use this version, because it would break
-            # Remove if your package shall be part of coredev.
-            # plone_coredev tests as of 2016-04-01.
             'plone.testing>=5.0.0',
-            'plone.app.contenttypes',
             'plone.app.robotframework[debug]',
         ],
     },

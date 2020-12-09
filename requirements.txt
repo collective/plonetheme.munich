@@ -1,3 +1,4 @@
--c constraints.txt
+-c https://dist.plone.org/release/5.2-latest/requirements.txt
+
 setuptools
 zc.buildout
