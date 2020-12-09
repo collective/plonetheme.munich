@@ -3,7 +3,43 @@
 html {
 
   body {
-   
+
+    #portal-header {
+      margin: 1.75em 0 2em 0;
+    }
+
+    #portal-mainnavigation {
+      margin-bottom: 2em;
+    }
+
+    .breadcrumb {
+      padding: 0;
+      margin-bottom: 2em;
+      background-color: transparent;
+    }    
+
+    #global-statusmessage {
+      margin-bottom: 2em;
+    }
+
+    #content {
+      margin-bottom: 2em;
+
+      #section-byline {
+        margin-bottom: 1em;
+      }
+
+      #content-core {
+        .autotoc-nav {
+          margin: 1em 0;
+        }
+      }
+    }
+
+    .portlet {
+      margin-bottom: 1em;
+    }    
+
   }
 
 }

@@ -1,0 +1,3 @@
+<div id="portal-header" class="d-flex justify-content-between">
+    <div tal:replace="structure provider:plone.portalheader" />
+</div>

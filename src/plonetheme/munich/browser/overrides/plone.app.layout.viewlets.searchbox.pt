@@ -1,0 +1,23 @@
+<div id="portal-searchbox" class="align-self-center" i18n:domain="plone" tal:define="navigation_root_url view/navigation_root_url;">
+
+    <form id="searchGadget_form" action="@@search" role="search" tal:attributes="action string:${navigation_root_url}/@@search;
+                          data-pat-livesearch string:ajaxUrl:${navigation_root_url}/@@ajax-search;
+                          class python: view.livesearch and 'pat-livesearch row gy-2 gx-3 align-items-center' or 'row gy-2 gx-3 align-items-center'">
+
+      <div class="LSBox"></div>
+
+      <label class="visually-hidden" for="autoSizingInputGroup">Username</label>
+      <div class="input-group">
+        <div class="input-group-text">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+          </svg>
+        </div>
+        <input type="text" class="form-control" id="autoSizingInputGroup" value="" placeholder="Search Site" i18n:attributes="placeholder title_search_site" tal:attributes="value request/form/SearchableText|nothing;">
+        <button type="submit" class="btn btn-primary text-light" value="Search" i18n:attributes="value label_search;">Search</button>
+      </div>
+
+    </form>
+
+</div>

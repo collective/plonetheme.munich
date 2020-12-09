@@ -1,0 +1,29 @@
+<tal:sections
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     tal:define="portal_tabs view/portal_tabs"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
+
+<div class="bg-primary">
+
+  <div class="container">
+
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item" tal:repeat="item portal_tabs">
+            <a class="nav-link" href="${item/url}">${item/name}</a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+  </div>
+
+</div>
+
+</tal:sections>
