@@ -25,22 +25,14 @@
 
   <head>
     <meta charset="utf-8" />
-
     <div tal:replace="structure provider:plone.htmlhead" />
-
-    <tal:comment replace="nothing">
-        Various slots where you can insert elements in the header from a template.
-    </tal:comment>
     <metal:topslot define-slot="top_slot" />
     <metal:headslot define-slot="head_slot" />
     <metal:styleslot define-slot="style_slot" />
-
     <div tal:replace="structure provider:plone.scripts" />
     <metal:javascriptslot define-slot="javascript_head_slot" />
-
     <link tal:replace="structure provider:plone.htmlhead.links" />
     <meta name="generator" content="Plone - http://plone.com" />
-
   </head>
 
   <body tal:define="isRTL portal_state/is_rtl;
@@ -64,8 +56,7 @@
 
     <section id="global_statusmessage">
       <tal:message tal:content="structure provider:plone.globalstatusmessage"/>
-      <div metal:define-slot="global_statusmessage">
-      </div>
+      <div metal:define-slot="global_statusmessage"></div>
     </section>
 
     <div id="viewlet-above-content" tal:content="structure provider:plone.abovecontent" />
@@ -121,17 +112,13 @@
       </metal:block>
     </article>
 
-    <aside id="portal-column-one"
-           metal:define-slot="column_one_slot"
-           tal:condition="sl">
+    <aside id="portal-column-one" metal:define-slot="column_one_slot" tal:condition="sl">
       <metal:portlets define-slot="portlets_one_slot">
         <tal:block replace="structure provider:plone.leftcolumn" />
       </metal:portlets>
     </aside>
 
-    <aside id="portal-column-two"
-           metal:define-slot="column_two_slot"
-           tal:condition="sr">
+    <aside id="portal-column-two" metal:define-slot="column_two_slot" tal:condition="sr">
       <metal:portlets define-slot="portlets_two_slot">
         <tal:block replace="structure provider:plone.rightcolumn" />
       </metal:portlets>
